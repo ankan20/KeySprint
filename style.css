@@ -7,37 +7,60 @@
 }
 body {
     display: flex;
-    padding: 0 10px;
+    flex-direction: column;
+    padding: 0;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient( #007acc, #6DD5FA, #FFFFFF);
+    background: url('./bg-type-test.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
-#paragraph{
-    color: #646669;
+
+header {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
 }
-.result-details{
-    color: white;
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+.heading-sp {
+    color: #007acc;
+}
+
+#paragraph {
+    color: #4a4e69;
+}
+.result-details {
+    color: #d3d3d3;
 }
 ::selection {
     color: #fff;
     background: #007acc;
 }
 .wrapper {
-    width: 700px;
-    padding: 35px;
-    background: #1e1e1e;
-    border-radius: 10px;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+    width: 720px;
+    padding: 40px;
+    background: #20232a;
+    border-radius: 12px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
 }
 .wrapper .input-field {
     opacity: 0;
-    z-index: -999;
+    z-index: -1;
     position: absolute;
 }
 .wrapper .content-box {
-    padding: 13px 20px 0;
-    border-radius: 10px;
+    padding: 15px 22px 0;
+    border-radius: 12px;
     border: 4px solid #007acc;
 }
 .content-box .typing-text {
@@ -48,7 +71,8 @@ body {
     width: 0;
 }
 .typing-text p {
-    font-size: 21px;
+    font-size: 22px;
+    line-height: 1.6;
     text-align: justify;
     letter-spacing: 1px;
     word-break: break-all;
@@ -57,15 +81,12 @@ body {
     position: relative;
 }
 .typing-text p span.correct {
-    color: #d1d0c5;
+    color: #c8c8c8;
 }
 .typing-text p span.incorrect {
-    color: #ca4754;
-    border-radius: 4px;
+    color: #e63946;
+    border-radius: 5px;
 }
-/* .typing-text p span.active {
-    color: #17A2B8;
-} */
 .typing-text p span.active::before {
     position: absolute;
     content: "";
@@ -84,9 +105,9 @@ body {
     }
 }
 .content-box .content {
-    margin-top: 17px;
+    margin-top: 20px;
     display: flex;
-    padding: 12px 0;
+    padding: 14px 0;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -95,58 +116,59 @@ body {
 .content button {
     outline: none;
     border: none;
-    width: 105px;
+    width: 110px;
     color: #007acc;
-    padding: 8px 0;
-    font-size: 17px;
+    padding: 10px 0;
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     border-radius: 15px;
     border: 3px solid #007acc;
     background: none;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 .content button:active {
-    transform: scale(0.89);
+    transform: scale(0.9);
 }
 .content button:hover {
-    background: #FFFFFF;
+    background: #ffffff;
 }
 .content .result-details {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    width: calc(100% - 140px);
+    width: calc(100% - 150px);
     justify-content: space-between;
 }
 .result-details li {
     display: flex;
-    height: 20px;
+    height: 22px;
     list-style: none;
     position: relative;
     align-items: center;
 }
 .result-details li:not(:first-child) {
-    padding-left: 22px;
+    padding-left: 24px;
     border-left: 2px solid #bfbfbf;
 }
 .result-details li p {
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 500;
 }
 .result-details li span {
     display: block;
-    font-size: 13px;
-    margin-left: 10px;
+    font-size: 14px;
+    margin-left: 12px;
 }
 li span b {
-    font-weight: 500;
+    font-weight: 600;
 }
 li:not(:first-child) span {
-    font-weight: 500;
+    font-weight: 600;
 }
 @media (max-width: 745px) {
     .wrapper {
-        padding: 20px;
+        padding: 25px;
     }
     .content-box .content {
         padding: 20px 0;
@@ -160,8 +182,8 @@ li:not(:first-child) span {
     }
     .content button {
         width: 100%;
-        font-size: 15px;
-        padding: 10px 0;
+        font-size: 16px;
+        padding: 12px 0;
         margin-top: 20px;
     }
     .content .result-details {
@@ -173,20 +195,20 @@ li:not(:first-child) span {
     }
     .result-details li p,
     .result-details li span {
-        font-size: 15px;
+        font-size: 16px;
     }
 }
 @media (max-width: 518px) {
     .wrapper .content-box {
-        padding: 10px 15px 0;
+        padding: 12px 17px 0;
     }
     .typing-text p {
-        font-size: 13px;
+        font-size: 15px;
     }
     .result-details li {
-        margin-bottom: 10px;
+        margin-bottom: 12px;
     }
     .content button {
-        margin-top: 10px;
+        margin-top: 12px;
     }
 }
